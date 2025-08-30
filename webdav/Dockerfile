@@ -5,14 +5,12 @@ RUN mkdir -p /data/tmp
 VOLUME /data/tmp
 
 RUN apk update && \
-    apk add nginx nginx-mod-http-dav-ext && \
+    apk add --no-cache nginx nginx-mod-http-dav-ext && \
     nginx -V
 
 COPY default.conf /etc/nginx/http.d/
 
 RUN sed -i -e 's/user nginx;/user nobody;/g' /etc/nginx/nginx.conf
-
-RUN nginx -V
 RUN nginx -t
 
 CMD ["nginx", "-g", "daemon off;"]
