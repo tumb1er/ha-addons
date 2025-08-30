@@ -10,7 +10,8 @@ RUN apk update && \
 
 COPY default.conf /etc/nginx/http.d/
 
-RUN find /etc/nginx
+RUN sed -i -e 's/user nginx;/user nobody;/g' /etc/nginx/nginx.conf
+
 RUN nginx -V
 RUN nginx -t
 
