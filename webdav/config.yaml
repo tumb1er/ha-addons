@@ -1,6 +1,6 @@
 name: "Nginx WebDAV"
 description: "Provides media access over WebDAV"
-version: "0.0.3"
+version: "0.0.4"
 slug: "nginx-webdav"
 init: false
 arch:
