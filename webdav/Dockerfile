@@ -1,10 +1,16 @@
 ARG BUILD_FROM=ghcr.io/home-assistant/amd64-base:latest
 FROM $BUILD_FROM
 
+RUN mkdir -p /data/tmp /data/shared
+
 RUN apk update && \
-    apk add nginx && \
+    apk add nginx nginx-mod-http-dav-ext && \
     nginx -V
 
-COPY ./dav.conf /etc/nginx/conf.d/
+COPY default.conf /etc/nginx/http.d/
+
+RUN find /etc/nginx
+RUN nginx -V
+RUN nginx -t
 
 CMD ["nginx", "-g", "daemon off;"]
