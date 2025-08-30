@@ -1,8 +1,10 @@
-ARG BUILD_FROM
+ARG BUILD_FROM=ghcr.io/home-assistant/amd64-base:latest
 FROM $BUILD_FROM
 
-# Copy data for add-on
-COPY run.sh /
-RUN chmod a+x /run.sh
+RUN apk update && \
+    apk add nginx && \
+    nginx -V
 
-CMD [ "/run.sh" ]
+COPY ./dav.conf /etc/nginx/conf.d/
+
+CMD ["nginx", "-g", "daemon off;"]
