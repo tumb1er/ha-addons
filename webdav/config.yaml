@@ -9,3 +9,9 @@ arch:
   - armhf
   - armv7
   - i386
+ports:
+  80/tcp: 80
+map:
+  - type: share
+    read_only: False
+    path: /data/shared
