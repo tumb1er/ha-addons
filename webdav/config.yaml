@@ -15,4 +15,3 @@ map:
   - type: share
     read_only: False
     path: /data/shared
-webui: http://[HOST]:[PORT:80]/
