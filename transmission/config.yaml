@@ -15,6 +15,9 @@ map:
   - type: media
     read_only: False
     path: /transmission/downloads/
+  - type: share
+    read_only: False
+    path: /transmission/incomplete/
   - type: addon_config
     read_only: False
     path: /transmission/config/
