@@ -7,7 +7,12 @@ COPY ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT [ "/entrypoint.sh"]
 
-USER nobody
-
 STOPSIGNAL TERM
-CMD [ "/usr/sbin/minidlnad", "-d", "-P", "/config/minidlna.pid", "-f", "/config/minidlna.conf" ]
+CMD [
+  "/usr/sbin/minidlnad",
+  "-d",
+  "-P", "/config/minidlna.pid",
+  "-f", "/config/minidlna.conf",
+  "-u", "nobody",
+  "-g", "nobody"
+]
