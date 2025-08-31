@@ -10,7 +10,7 @@ RUN apk update && \
 
 COPY default.conf /etc/nginx/http.d/
 
-RUN sed -i -e 's/user nginx;/user nobody;/g' /etc/nginx/nginx.conf
+RUN sed -i -e 's/user nginx;/user root;/g' /etc/nginx/nginx.conf
 RUN nginx -t
 
 CMD ["nginx", "-g", "daemon off;"]
