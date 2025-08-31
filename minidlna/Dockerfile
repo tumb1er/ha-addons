@@ -10,5 +10,5 @@ ENTRYPOINT [ "/entrypoint.sh"]
 STOPSIGNAL TERM
 CMD [ "/usr/sbin/minidlnad", \
       "-d", \
-      "-P", "/config/minidlna.pid", \
+      "-P", "/tmp/minidlna.pid", \
       "-f", "/config/minidlna.conf" ]
