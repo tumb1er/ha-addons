@@ -1,10 +1,14 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base:stable
+ARG BUILD_FROM=ghcr.io/home-assistant/amd64-base:latest
 FROM $BUILD_FROM
 
 RUN apk add --no-cache minidlna
 
-COPY run.sh /run.sh
-RUN chmod +x /run.sh
+COPY ./entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT [ "/entrypoint.sh"]
 
 STOPSIGNAL TERM
-CMD [ "/run.sh" ]
+CMD [ "/usr/sbin/minidlnad", \
+      "-d", \
+      "-P", "/tmp/minidlna.pid", \
+      "-f", "/config/minidlna.conf" ]
