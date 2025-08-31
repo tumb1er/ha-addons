@@ -11,6 +11,4 @@ STOPSIGNAL TERM
 CMD [ "/usr/sbin/minidlnad", \
       "-d", \
       "-P", "/config/minidlna.pid", \
-      "-f", "/config/minidlna.conf", \
-      "-u", "nobody", \
-      "-g", "nobody" ]
+      "-f", "/config/minidlna.conf" ]
