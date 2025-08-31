@@ -14,7 +14,5 @@ COPY ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
-USER nobody
-
 STOPSIGNAL SIGTERM
 CMD ["/usr/bin/transmission-daemon", "--foreground", "--config-dir", "/transmission/config"]

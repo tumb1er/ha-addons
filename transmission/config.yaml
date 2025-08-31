@@ -1,6 +1,6 @@
 name: "Transmission daemon"
 description: "Provides UI for downloading media by torrent protocol"
-version: "0.0.1"
+version: "0.0.2"
 slug: "transmission-daemon"
 init: false
 arch:
