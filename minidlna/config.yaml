@@ -1,6 +1,6 @@
 name: "MiniDLNA"
 description: "Shares media via DLNA protocol"
-version: "0.0.7"
+version: "0.0.8"
 slug: "minidlna"
 init: false
 arch:
@@ -9,9 +9,10 @@ arch:
   - armhf
   - armv7
   - i386
-ports:
-  8200/tcp: 8200
-  1900/udp: 1900
+#ports:
+#  8200/tcp: 8200
+#  1900/udp: 1900
+host_network: true
 map:
   - type: media
     read_only: False
