@@ -1,6 +1,6 @@
 name: "MiniDLNA"
 description: "Shares media via DLNA protocol"
-version: "0.0.20"
+version: "0.0.21"
 slug: "minidlna"
 init: false
 arch:
@@ -18,3 +18,4 @@ map:
     read_only: False
     path: /config/
 ingress: true
+ingress_port: 8200
