@@ -1,6 +1,6 @@
 name: "MiniDLNA"
 description: "Shares media via DLNA protocol"
-version: "0.0.9"
+version: "0.0.22"
 slug: "minidlna"
 init: false
 arch:
@@ -17,4 +17,4 @@ map:
   - type: addon_config
     read_only: False
     path: /config/
-webui: "http://[HOST]:[PORT:8200]"
+webui: "http://192.168.50.116:8200"
