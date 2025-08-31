@@ -1,6 +1,6 @@
 name: "MiniDLNA"
 description: "Shares media via DLNA protocol"
-version: "0.0.22"
+version: "0.0.23"
 slug: "minidlna"
 init: false
 arch:
