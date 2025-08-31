@@ -1,6 +1,6 @@
-name: "Transmission daemon"
+name: "Transmission Daemon"
 description: "Provides UI for downloading media by torrent protocol"
-version: "0.0.2"
+version: "0.0.3"
 slug: "transmission-daemon"
 init: false
 arch:
@@ -21,3 +21,5 @@ map:
   - type: addon_config
     read_only: False
     path: /transmission/config/
+ingress: true
+ingress_port: 9091
