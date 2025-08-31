@@ -5,10 +5,11 @@ RUN apk add --no-cache minidlna
 
 COPY ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
-ENTRYPOINT [ "/entrypoint.sh"]
+#ENTRYPOINT [ "/entrypoint.sh"]
 
 STOPSIGNAL TERM
-CMD [ "/usr/sbin/minidlnad", \
+CMD [ "/entrypoint.sh", \
+      "/usr/sbin/minidlnad", \
       "-d", \
       "-P", "/tmp/minidlna.pid", \
       "-f", "/config/minidlna.conf" ]
