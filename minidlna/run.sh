@@ -11,4 +11,4 @@ cat /etc/minidlna.conf | sed \
   -e "s/port=8200/port=%{ingress_port}/g" \
   > /config/minidlna.conf
 
-exec "$@"
+exec /usr/sbin/minidlnad -d -P /tmp/minidlna.pid -f /config/minidlna.conf
