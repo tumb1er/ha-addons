@@ -8,7 +8,7 @@ cat /etc/minidlna.conf | sed \
   -e 's/#enable_subtitles=yes/enable_subtitles=no/g' \
   -e 's/#db_dir=\/var\/cache\/minidlna/db_dir=\/config\/minidlna/g' \
   -e 's/notify_interval=900/notify_interval=60/g' \
-  -e "s/port=8200/port={ingress_port}/g" \
+  -e "s/port=8200/port=${ingress_port}/g" \
   > /config/minidlna.conf
 
 cat /config/minidlna.conf
