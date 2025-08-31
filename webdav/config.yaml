@@ -1,6 +1,6 @@
 name: "Nginx WebDAV"
 description: "Provides media access over WebDAV"
-version: "0.0.6"
+version: "0.0.7"
 slug: "nginx-webdav"
 init: false
 arch:
@@ -12,6 +12,6 @@ arch:
 ports:
   80/tcp: 80
 map:
-  - type: share
+  - type: media
     read_only: False
     path: /data/shared
