@@ -1,6 +1,6 @@
 name: "FRP Client"
 description: "Fast Reverse Proxy client"
-version: "0.0.1"
+version: "0.0.2"
 slug: "ftp-client"
 init: false
 arch:
@@ -9,8 +9,6 @@ arch:
   - armhf
   - armv7
   - i386
-ports:
-  80/tcp: 80
 map:
   - type: media
     read_only: False
