@@ -1,6 +1,6 @@
 name: "FRP Client"
 description: "Fast Reverse Proxy client"
-version: "0.0.3"
+version: "0.0.4"
 slug: "frp-client"
 init: false
 arch:
@@ -10,9 +10,6 @@ arch:
   - armv7
   - i386
 map:
-  - type: media
-    read_only: False
-    path: /data/shared
   - type: addon_config
-    read_only: True
+    read_only: False
     path: /config
