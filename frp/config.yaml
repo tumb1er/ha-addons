@@ -1,7 +1,7 @@
 name: "FRP Client"
 description: "Fast Reverse Proxy client"
-version: "0.0.2"
-slug: "ftp-client"
+version: "0.0.3"
+slug: "frp-client"
 init: false
 arch:
   - aarch64
@@ -15,4 +15,4 @@ map:
     path: /data/shared
   - type: addon_config
     read_only: True
-    path: /config/
+    path: /config
