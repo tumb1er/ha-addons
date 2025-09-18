@@ -1,0 +1,20 @@
+name: "FRP Client"
+description: "Fast Reverse Proxy client"
+version: "0.0.1"
+slug: "ftp-client"
+init: false
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
+ports:
+  80/tcp: 80
+map:
+  - type: media
+    read_only: False
+    path: /data/shared
+  - type: addon_config
+    read_only: True
+    path: /config/
