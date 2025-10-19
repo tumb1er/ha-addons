@@ -1,8 +1,8 @@
 ARG BUILD_FROM=ghcr.io/home-assistant/amd64-base:latest
 FROM $BUILD_FROM
 
-RUN mkdir -p /data/tmp
-VOLUME /data/tmp
+RUN mkdir -p /data/shared/.tmp
+VOLUME /data/shared/.tmp
 
 RUN apk update && \
     apk add --no-cache nginx nginx-mod-http-dav-ext && \
