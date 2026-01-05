@@ -1,6 +1,6 @@
 name: "Transmission Daemon"
 description: "Provides UI for downloading media by torrent protocol"
-version: "0.0.5"
+version: "0.0.6"
 slug: "transmission-daemon"
 init: false
 arch:
@@ -21,3 +21,6 @@ map:
   - type: addon_config
     read_only: False
     path: /transmission/config/
+environment:
+  ALL_PROXY: "socks5h://192.168.50.1:1080"
+
