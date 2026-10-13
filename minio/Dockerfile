@@ -9,3 +9,8 @@ FROM ghcr.io/home-assistant/base:latest
 RUN apk add --no-cache jq
 
 COPY --from=builder /out/minio /usr/local/bin/minio
+COPY entrypoint.sh /entrypoint.sh
+
+RUN chmod +x /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
