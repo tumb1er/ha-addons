@@ -4,12 +4,12 @@ set -eu
 
 options=/data/options.json
 
-if ! root_user="$(jq -er '.root_user | select(type == "string" and length > 0)' "$options" 2>/dev/null)"; then
+if ! root_user="$(jq -er '.root_user | select(type == "string") | gsub("^[[:space:]]+|[[:space:]]+$"; "") | select(length > 0)' "$options" 2>/dev/null)"; then
     printf '%s\n' 'root_user must be configured' >&2
     exit 1
 fi
 
-if ! root_password="$(jq -er '.root_password | select(type == "string" and length > 0)' "$options" 2>/dev/null)"; then
+if ! root_password="$(jq -er '.root_password | select(type == "string") | gsub("^[[:space:]]+|[[:space:]]+$"; "") | select(length > 0)' "$options" 2>/dev/null)"; then
     printf '%s\n' 'root_password must be configured' >&2
     exit 1
 fi
